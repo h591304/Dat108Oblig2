@@ -2,11 +2,7 @@ package oppgave2;
 
 import java.util.Arrays;
 import java.util.List;
-
-@FunctionalInterface
-interface Beregning{
-	int beregn(Ansatt a);
-}
+import java.util.function.Function;
 
 public class Oppg2 {
 	
@@ -25,7 +21,7 @@ public class Oppg2 {
 		
 		//i
 		System.out.println("------Et fast kronetillegg------");
-		lonnsoppgjor(ansatte, a -> a.setAarslonn(a.getAarslonn() + kroneTillegg));
+		//lonnsoppgjor(ansatte, a -> a.setAarslonn(a.getAarslonn() + kroneTillegg));
 		
 		
 		skrivUtAlle(ansatte);
@@ -34,7 +30,7 @@ public class Oppg2 {
 		
 		//ii
 		System.out.println("------Et fast prosenttillegg------");
-		//TODO
+		lonnsoppgjor(ansatte, a -> a.);
 		
 		
 		skrivUtAlle(ansatte);
@@ -61,8 +57,8 @@ public class Oppg2 {
 	}
 	
 	//lonnsoppgjor(...) skal beregne lønnsøkning til de ansatte 
-	private static Beregning lonnsoppgjor(List<Ansatt> ansatte, Beregning b) {
-		ansatte.forEach(a -> b.beregn(a));
+	private static void lonnsoppgjor(List<Ansatt> ansatte, Function <Ansatt, Integer> funksjon) {
+		
 	}
 	
 	private static void skrivUtAlle(List<Ansatt> ansatte) {
